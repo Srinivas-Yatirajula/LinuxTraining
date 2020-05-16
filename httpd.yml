@@ -1,0 +1,25 @@
+---
+- name: configuration of httpd package
+  hosts: all
+  tasks:
+  - name: install package using yum
+    yum:
+     name: httpd
+     state: latest
+  - name: service httpd start
+    service:
+     name: httpd
+     state: started
+  - name: create a index.html file
+    file:
+     path: /var/www/html/index.html
+     state: present
+  - name: content write into index.html
+    copy:
+     content: 'Welcome to Test Website :: Demo Web-Site'
+     dest: /var/www/html/index.html
+  - name: service restart httpd
+    service:
+     name: httpd
+     state: restarted
+...
