@@ -1,0 +1,13 @@
+---
+- name: create user
+  hosts: all
+  tasks:
+  - name: adding cloudadmin user by user command
+    user:
+     name: cloudadmin
+     state: present
+  - name: adding networkadmin user by user command
+    user:
+     name: cloudadmin
+     state: present
+...
