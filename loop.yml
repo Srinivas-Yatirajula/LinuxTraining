@@ -1,0 +1,13 @@
+---
+- name: create user using loop conditions
+  hosts: all
+  tasks;
+  - name: Add Users using loop Condition
+    user:
+     name: "{{ item }}"
+     state; present
+  - name: add loop condition
+    loop:
+     - networkadmin
+     - cloudadmin
+... 
